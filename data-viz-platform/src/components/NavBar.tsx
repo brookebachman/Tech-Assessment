@@ -4,6 +4,7 @@ import menuIcon from "../assets/menu.png";
 import homeIcon from "../assets/home.png";
 import bellIcon from "../assets/bell.png";
 import clipboardIcon from "../assets/clipboard.png";
+import cogIcon from "../assets/cog.png";
 import accountIcon from "../assets/account-circle.png";
 import cloudIcon from "../assets/cloud-upload.png";
 
@@ -15,16 +16,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-950 p-4 h-screen flex space-between items-start flex-col left-0 top-0 bottom-0 fixed w-20">
-      <div className="max-w-7xl mx-auto ">
+    <nav className="bg-blue-[#161618] p-4 h-screen flex space-between items-start flex-col left-4 top-4 bottom-0 fixed w-20">
+      <div className="max-w-7xl">
         <a href="#" className="text-white hover:text-blue-200">
           <img src={menuIcon} alt="Menu" className="h-6 w-6" />
         </a>
         {/* Logo */}
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex flex-col  h-screen">
-          <div className="flex flex-col h-full space-y-10 ">
+        <div className="hidden md:flex flex-col h-screen">
+          <div className="flex flex-col h-full space-y-10">
             <a href="#about" className="mt-10 text-white hover:text-blue-200">
               <img src={homeIcon} alt="Home" className="h-6 w-6" />
             </a>
@@ -36,6 +37,9 @@ const Navbar = () => {
             </a>
             <a href="#contact" className="text-white hover:text-blue-200">
               <img src={cloudIcon} alt="Cloud" className="h-6 w-6" />
+            </a>
+            <a href="#contact" className="text-white hover:text-blue-200">
+              <img src={cogIcon} alt="Cog" className="h-6 w-6" />
             </a>
           </div>
 
