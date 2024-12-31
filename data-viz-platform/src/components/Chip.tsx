@@ -23,7 +23,7 @@ const Chip: React.FC<ChipProps> = ({ label, onDelete, className = "" }) => {
       className={`flex items-center justify-between cursor-pointer ${
         isClicked
           ? "bg-[#282E16] border border-[#C9FF3B] text-[#C9FF3B]"
-          : "bg-[#222324]text-[#5959594D] border border-white"
+          : "bg-[#5959594D] text-[#D5D5D5] border border-white"
       } rounded-full px-4 py-1 text-sm font-medium transition-colors ${className}`}
     >
       <span>{label}</span>
