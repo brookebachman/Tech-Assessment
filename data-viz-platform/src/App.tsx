@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/NavBar";
 import NavHeader from "./components/NavHeader";
@@ -9,27 +10,37 @@ function App() {
   const [showSlider, setShowSlider] = useState(false);
 
   return (
-    <>
-      {/* Main container with full height */}
-      <div className="flex flex-col h-screen ">
-        {/* Top header */}
+    <Router>
+      <div className="flex flex-col h-screen">
+        {/* Top Header */}
         <NavHeader />
 
-        {/* Main layout with Navbar on the left and content on the right */}
+        {/* Main Layout */}
         <div className="flex">
           {/* Left Sidebar */}
-          <div className="fixed top-20 left-0 h-full w-20">
+          <aside className="fixed top-20 left-0 h-full w-20">
             <Navbar />
-          </div>
+          </aside>
 
-          {/* Content Area */}
-          <div className="ml-20 mt-20 p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-auto ">
-            <Dashboard setShowSlider={setShowSlider} show={showSlider} />
+          {/* Main Content */}
+          <main className="ml-20 mt-20 p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-auto flex-grow">
+            <Routes>
+              <Route
+                path="/dashboard"
+                element={
+                  <Dashboard setShowSlider={setShowSlider} show={showSlider} />
+                }
+              />
+              {/* <Route path="/settings" element={<Settings />} />
+              <Route path="/reports" element={<Reports />} /> */}
+            </Routes>
+
+            {/* SlideOver Panel */}
             <SlideOver setShowSlider={setShowSlider} show={showSlider} />
-          </div>
+          </main>
         </div>
       </div>
-    </>
+    </Router>
   );
 }
 
