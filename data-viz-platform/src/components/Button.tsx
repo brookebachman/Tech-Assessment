@@ -2,7 +2,7 @@ import React from "react";
 
 type ButtonProps = {
   label: string; // Button text
-  icon?: React.ReactNode; // Optional icon
+  icon?: any; // Optional icon
   onClick?: () => void; // Click handler
   className?: string; // Additional styles
   disabled?: boolean;

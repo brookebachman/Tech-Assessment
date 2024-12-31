@@ -5,6 +5,8 @@ import Navbar from "./components/NavBar";
 import NavHeader from "./components/NavHeader";
 import { Dashboard } from "./pages/Dashboard";
 import { SlideOver } from "./components/Slideover";
+import Login from "./pages/Login";
+import PrivateRoute from "./context/PrivateRoute";
 
 function App() {
   const [showSlider, setShowSlider] = useState(false);
@@ -25,14 +27,15 @@ function App() {
           {/* Main Content */}
           <main className="ml-20 mt-20 p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-auto flex-grow">
             <Routes>
-              <Route
+              {/* Protect dashboard route */}
+              <PrivateRoute
                 path="/dashboard"
                 element={
                   <Dashboard setShowSlider={setShowSlider} show={showSlider} />
                 }
               />
-              {/* <Route path="/settings" element={<Settings />} />
-              <Route path="/reports" element={<Reports />} /> */}
+              <Route path="/login" element={<Login />} />
+              {/* Other routes */}
             </Routes>
 
             {/* SlideOver Panel */}
