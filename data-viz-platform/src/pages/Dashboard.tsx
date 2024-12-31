@@ -8,11 +8,15 @@ import infoIcon from "../assets/info.png";
 import downloadIcon from "../assets/download.png";
 import chevronDownIcon from "../assets/chevron-down.png";
 import { useState } from "react";
+import { SlideOver } from "../components/Slideover";
 
 export const Dashboard = () => {
   const [expand, setExpand] = useState(false);
+  const [showSlider, setShowSlider] = useState(false);
+
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 relative overflow-hidden">
+      <SlideOver show={showSlider} />
       <div id="Header-section" className="flex p-4 justify-between">
         <div className="flex">
           <img src={lightningIcon} alt="Home" className="h-7 w-7" />{" "}
@@ -22,7 +26,10 @@ export const Dashboard = () => {
           <div className="bg-[#222324] rounded p-2 mx-2">
             <img src={reverseIcon} alt="Home" className="h-4" />
           </div>
-          <div className="border border-[#222324] bg-[#222324] rounded px-2 py-1">
+          <div
+            className="border border-[#222324] bg-[#222324] rounded px-2 py-1"
+            onClick={() => setShowSlider(true)}
+          >
             Edit Variables
           </div>
           <div className="bg-[#222324] rounded p-2 mx-2">

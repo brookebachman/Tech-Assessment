@@ -9,8 +9,8 @@ const NavHeader = () => {
   };
 
   return (
-    <div className="bg-blue-[#161618] p-4 w-full flex justify-between items-center left-0 top-0 fixed h-20">
-      <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
+    <div className="bg-blue-[#161618] p-4 flex justify-between items-center left-20 top-0 fixed h-20">
+      <div className="flex justify-between items-center">
         {/* Left Side: Menu Icon */}
 
         {/* Desktop Menu */}
