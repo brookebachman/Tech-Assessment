@@ -20,7 +20,7 @@ const Chip: React.FC<ChipProps> = ({ label, onDelete, className = "" }) => {
   return (
     <div
       onClick={handleClick}
-      className={`flex items-center justify-between cursor-pointer ${
+      className={`flex items-center justify-between cursor-pointer mr-2 ${
         isClicked
           ? "bg-[#282E16] border border-[#C9FF3B] text-[#C9FF3B]"
           : "bg-[#5959594D] text-[#D5D5D5] border border-white"
@@ -30,12 +30,13 @@ const Chip: React.FC<ChipProps> = ({ label, onDelete, className = "" }) => {
       <img
         src={!isClicked ? sparkleIcon : greenSparkleIcon}
         alt="Home"
-        className="h-6"
+        className={`ml-2 ${!isClicked ? "h-3" : "h-5"}`} // Conditionally set height
       />
+
       <img
         src={!isClicked ? plusIcon : checkMarkIcon}
         alt="Home"
-        className="h-6"
+        className="h-5"
       />
       {onDelete && (
         <button

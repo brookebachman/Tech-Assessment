@@ -23,8 +23,8 @@ export const SlideOver: React.FC<SlideOverProps> = ({
         right: show ? 0 : -700,
       }}
     >
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl mb-4">Edit Variables</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl ">Edit Variables</h1>
         <img
           src={xIcon}
           alt="Home"
