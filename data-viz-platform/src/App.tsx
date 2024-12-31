@@ -27,15 +27,19 @@ function App() {
           {/* Main Content */}
           <main className="ml-20 mt-20 p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-auto flex-grow">
             <Routes>
-              {/* Protect dashboard route */}
-              <PrivateRoute
-                path="/dashboard"
+              {/* Use PrivateRoute as a wrapper */}
+              <Route
+                path="/"
                 element={
-                  <Dashboard setShowSlider={setShowSlider} show={showSlider} />
+                  <PrivateRoute>
+                    <Dashboard
+                      setShowSlider={setShowSlider}
+                      show={showSlider}
+                    />
+                  </PrivateRoute>
                 }
               />
               <Route path="/login" element={<Login />} />
-              {/* Other routes */}
             </Routes>
 
             {/* SlideOver Panel */}

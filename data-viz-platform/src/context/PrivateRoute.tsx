@@ -1,16 +1,15 @@
-// PrivateRoute.tsx
 import { Navigate } from "react-router-dom";
 import { useAuth } from "./Context";
 
 interface PrivateRouteProps {
-  element: JSX.Element;
-  path: string;
+  children: JSX.Element;
 }
 
-const PrivateRoute = ({ element }: PrivateRouteProps) => {
+const PrivateRoute = ({ children }: PrivateRouteProps) => {
   const { isAuthenticated } = useAuth();
 
-  return isAuthenticated ? element : <Navigate to="/login" />;
+  // If authenticated, render the children (the protected route content). If not, redirect to login page
+  return isAuthenticated ? children : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;
