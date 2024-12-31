@@ -29,7 +29,7 @@ const MyLineChart = () => {
       <XAxis dataKey="name" tick={{ fill: "white" }} />
       <YAxis tickFormatter={formatYAxis} tick={{ fill: "white" }} />
       <Tooltip
-        formatter={(value: number) => `${value.toLocaleString()} units`}
+        formatter={(value: number) => `$${value.toLocaleString()} dollars`}
         contentStyle={{
           color: "black",
           backgroundColor: "rgba(0, 0, 0, 0.7)",

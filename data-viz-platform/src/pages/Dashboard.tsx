@@ -1,6 +1,6 @@
 import MyLineChart from "../components/LineChart";
 import lightningIcon from "../assets/lightning-bolt.png";
-import sparkleIcon from "../assets/sparkle.png";
+import greenSparkleIcon from "../assets/greenSparkle.png";
 import plusIcon from "../assets/plus.png";
 import ellipsesIcon from "../assets/ellipses.png";
 import reverseIcon from "../assets/reverse.png";
@@ -49,7 +49,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
         <div className="flex items-center justify-between">
           <div className="flex p-4">
-            <img src={sparkleIcon} alt="Home" className="h-4 w-4" />
+            <img src={greenSparkleIcon} alt="Home" className="h-7 w-7" />
             <h3 className="ml-2 text-lg text-[#DAFD7F] font-bold">
               Best Scenario Results
             </h3>
