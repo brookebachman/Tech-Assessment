@@ -46,14 +46,9 @@ const NavHeader = () => {
             value={searchQuery}
             onChange={handleSearchChange}
             placeholder="Search..."
-            className="p-2 rounded bg-[#262626] text-white border border-[#525252] focus:outline-none focus:border-blue-500"
+            className="p-2 rounded bg-[#262626] text-white border border-[#525252] focus:outline-none focus:border-blue-500 mr-20
+            "
           />
-          <button
-            type="submit"
-            className="ml-2 p-2 rounded bg-blue-500 hover:bg-blue-600 text-white"
-          >
-            Search
-          </button>
         </form>
       </div>
     </div>

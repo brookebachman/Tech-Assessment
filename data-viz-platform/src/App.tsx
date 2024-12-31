@@ -25,11 +25,11 @@ function App() {
           </aside>
 
           {/* Main Content */}
-          <main className="ml-20 mt-20 p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-auto flex-grow">
+          <main className="ml-20 mt-20 p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-x-hidden flex-grow">
             <Routes>
               {/* Use PrivateRoute as a wrapper */}
               <Route
-                path="/"
+                path="/dashboard"
                 element={
                   <PrivateRoute>
                     <Dashboard

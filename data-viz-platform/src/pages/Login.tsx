@@ -1,53 +1,37 @@
-import { useState } from "react";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithRedirect,
+  getRedirectResult,
+} from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleLogin = async () => {
-    const response = await fetch("https://api.example.com/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
+  const handleGoogleLogin = async () => {
+    try {
+      const auth = getAuth(); // Initialize Firebase auth
+      const provider = new GoogleAuthProvider(); // Create a new GoogleAuthProvider
 
-    const data = await response.json();
-    if (response.ok) {
-      // Save the token to localStorage or cookies
-      localStorage.setItem("token", data.token);
-      alert("Login successful!");
-    } else {
-      alert(data.message || "Login failed!");
+      // Sign in with redirect
+      await signInWithRedirect(auth, provider);
+
+      // After redirect, handle the result
+      const result = await getRedirectResult(auth);
+      if (result) {
+        const user = result.user;
+        console.log("User details: ", user);
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      console.error("Error during Google login: ", error);
     }
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-lg font-bold mb-4">Login</h1>
-      <div className="mb-2">
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="p-2 border rounded w-full"
-        />
-      </div>
-      <div className="mb-4">
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="p-2 border rounded w-full"
-        />
-      </div>
-      <button
-        onClick={handleLogin}
-        className="bg-blue-500 text-white p-2 rounded w-full"
-      >
-        Login
-      </button>
+    <div className="login">
+      <button onClick={handleGoogleLogin}>Login with Google</button>
     </div>
   );
 };

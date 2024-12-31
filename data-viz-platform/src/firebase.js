@@ -1,23 +1,27 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDkKQEJl-fHfik5d9S5X-ZufFah4YiJJ3w",
-  authDomain: "tech-challenge-5a71b.firebaseapp.com",
-  projectId: "tech-challenge-5a71b",
-  storageBucket: "tech-challenge-5a71b.firebasestorage.app",
-  messagingSenderId: "960871106530",
-  appId: "1:960871106530:web:41cf2912875c5ba9c91bbb",
-  measurementId: "G-DVE5K6SCMM",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
-export { auth, googleProvider };
+console.log(process.env.REACT_APP_FIREBASE_API_KEY); // Should print your Firebase API key
+
+export { auth, provider, signInWithPopup };

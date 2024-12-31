@@ -22,7 +22,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
   return (
     <div
-      className={`w-full relative h-[calc(100vh-120px)] overflow-hidden ${
+      className={`w-full relative h-[calc(100vh-120px)] ${
         show ? "blur-sm" : "none"
       }`}
     >
