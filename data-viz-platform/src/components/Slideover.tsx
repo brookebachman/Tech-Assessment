@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import xIcon from "../assets/x-icon.png";
-import Chip from "./chip";
+import Chip from "./Chip";
 import chevronDownIcon from "../assets/chevron-down.png";
 import sparkleIcon from "../assets/sparkle.png";
 import greenReverseIcon from "../assets/green_reverse.png";
