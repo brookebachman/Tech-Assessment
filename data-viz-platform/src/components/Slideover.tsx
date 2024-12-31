@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import xIcon from "../assets/x-icon.png";
 import Chip from "./chip";
 import chevronDownIcon from "../assets/chevron-down.png";
 import sparkleIcon from "../assets/sparkle.png";
 import greenReverseIcon from "../assets/green_reverse.png";
 import magnifyingGlassIcon from "../assets/magnifying_glass.png";
+import infoIcon from "../assets/info.png";
 import Button from "./Button";
 
 type SlideOverProps = {
@@ -15,6 +16,7 @@ export const SlideOver: React.FC<SlideOverProps> = ({
   show,
   setShowSlider,
 }) => {
+  const [showExtra, setShowExtra] = useState(false);
   return (
     <div
       className={`bg-[#0E0D0D] border border-b-black h-full w-[691px] top-0 absolute p-4
@@ -58,6 +60,20 @@ export const SlideOver: React.FC<SlideOverProps> = ({
           <Chip label="Carbon 1" />
         </div>
       </div>
+      {showExtra && (
+        <div className="bg-[#5959594D] p-4 text-2xl my-4 rounded">
+          <div className="flex items-center justify-between mb-2">
+            <div>Co2 Distribution</div>
+            <img src={infoIcon} alt="Home" className="h-4" />
+          </div>
+          <div className="text-base">
+            But what truly sets Switch apart is its versatility. It can be used
+            as a scooter, a bike, or even a skateboard, making it suitable for
+            people of all ages. Whether you're a student, a professional, or a
+            senior citizen, Switch adapts to your needs and lifestyle.
+          </div>
+        </div>
+      )}
       <div className="bg-[#5959594D] p-4 text-2xl text-[#C8E972] my-4 rounded flex justify-between">
         <div>Primary Variables</div>
         <div className="border border-[#C8E972] rounded-full flex px-2 py-1 mr-5">
