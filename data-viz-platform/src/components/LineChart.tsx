@@ -1,4 +1,3 @@
-import React from "react";
 import {
   LineChart,
   Line,
@@ -25,12 +24,17 @@ const formatYAxis = (tick: number) => {
 
 const MyLineChart = () => {
   return (
-    <LineChart width={500} height={300} data={dummyData}>
-      <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-      <XAxis dataKey="name" />
-      <YAxis tickFormatter={formatYAxis} />
+    <LineChart width={761} height={449} data={dummyData}>
+      <CartesianGrid stroke="#343434" strokeDasharray="2 2" />
+      <XAxis dataKey="name" tick={{ fill: "white" }} />
+      <YAxis tickFormatter={formatYAxis} tick={{ fill: "white" }} />
       <Tooltip
         formatter={(value: number) => `${value.toLocaleString()} units`}
+        contentStyle={{
+          color: "black",
+          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          border: "1px solid #B3E237",
+        }}
       />
       <Legend />
       <Line type="linear" dataKey="value" stroke="#C8E972" />
