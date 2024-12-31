@@ -15,7 +15,7 @@ export const Dashboard = () => {
   const [showSlider, setShowSlider] = useState(false);
 
   return (
-    <div className="w-full p-4 relative overflow-hidden">
+    <div className="w-full p-4 relative h-[calc(100vh-120px)] overflow-hidden">
       <SlideOver show={showSlider} />
       <div id="Header-section" className="flex p-4 justify-between">
         <div className="flex">
@@ -107,7 +107,7 @@ export const Dashboard = () => {
             </div>
           </div>
           <div className="flex mx-2">
-            <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-10 m-2 text-left">
+            <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-6 mx-2 text-left">
               <div className="flex items-center justify-between mb-2">
                 <div>Infrastructure units</div>
                 <img src={infoIcon} alt="info icon" className="h-3 w-3" />
@@ -117,7 +117,7 @@ export const Dashboard = () => {
               </div>
               <div className="text-2xl font-bold text-right mt-4">€421.07 </div>
             </div>
-            <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-10 m-2 text-left">
+            <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-6 mx-2 text-left">
               <div className="flex items-center justify-between mb-2">
                 <div>Changing growth</div>
                 <img src={infoIcon} alt="info icon" className="h-3 w-3" />
@@ -129,7 +129,7 @@ export const Dashboard = () => {
             </div>
           </div>
           <div className="flex mx-2">
-            <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-10 m-2 text-left">
+            <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-6 my-3 mx-2 text-left">
               <div className="flex items-center justify-between mb-2">
                 <div>Localization change</div>
                 <img src={infoIcon} alt="info icon" className="h-3 w-3" />
@@ -139,7 +139,7 @@ export const Dashboard = () => {
               </div>
               <div className="text-2xl font-bold text-right mt-4">21.9%</div>
             </div>
-            <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-10 m-2 text-left">
+            <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-6 my-3 mx-2 text-left">
               <div className="flex items-center justify-between mb-2">
                 <div>Fleet growth</div>
                 <img src={infoIcon} alt="info icon" className="h-3 w-3" />
