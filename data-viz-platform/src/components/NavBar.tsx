@@ -16,10 +16,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#161618] p-4 h-screen flex space-between items-start flex-col left-4 top-4 bottom-0 fixed w-20">
+    <nav className="bg-[#161618] p-4 h-4 md:h-screen flex space-between items-start flex-col left-4 top-4 bottom-0 fixed md:w-20">
       <div className="max-w-7xl">
         {/* Menu Icon */}
-        <button onClick={toggleMenu} className="text-white focus:outline-none">
+        <button
+          onClick={toggleMenu}
+          className="text-white focus:outline-none border border-[#222324]"
+        >
           <img src={menuIcon} alt="Menu" className="h-6 w-6" />
         </button>
 
@@ -59,7 +62,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-blue-600 text-white p-4">
+          <div className="md:hidden absolute bg-slate-600 text-white p-4 w-40 rounded left-0 z-[200]">
             <Link
               to="/"
               className="block py-2 hover:bg-blue-500"
@@ -68,11 +71,11 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              to="/notifications"
+              to="/dashboard"
               className="block py-2 hover:bg-blue-500"
               onClick={toggleMenu}
             >
-              Notifications
+              Dashboard
             </Link>
             <Link
               to="/tasks"

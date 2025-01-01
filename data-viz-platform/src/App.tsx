@@ -20,23 +20,24 @@ function App() {
         {/* Main Layout */}
         <div className="flex">
           {/* Left Sidebar */}
-          <aside className="fixed top-20 left-0 h-full w-20">
+          <aside className="fixed top-20 left-0 h-full w-full md:w-20 z-50">
             <Navbar />
           </aside>
 
           {/* Main Content */}
-          <main className="ml-20 mt-20 p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-x-hidden flex-grow">
+          <main className="md:ml-24 ml-0 min-w-screen mt-20 p-1 md:p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-x-hidden">
             <Routes>
+              <Route
+                path="/"
+                element={
+                  <Dashboard setShowSlider={setShowSlider} show={showSlider} />
+                }
+              />
               {/* Use PrivateRoute as a wrapper */}
               <Route
                 path="/dashboard"
                 element={
-                  <PrivateRoute>
-                    <Dashboard
-                      setShowSlider={setShowSlider}
-                      show={showSlider}
-                    />
-                  </PrivateRoute>
+                  <Dashboard setShowSlider={setShowSlider} show={showSlider} />
                 }
               />
               <Route path="/login" element={<Login />} />

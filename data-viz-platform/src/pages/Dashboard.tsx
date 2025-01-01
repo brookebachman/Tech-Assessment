@@ -22,17 +22,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
   return (
     <div
-      className={`w-full relative h-[calc(100vh-120px)] ${
+      className={`w-screen md:w-full relative md:h-[calc(100vh-120px)] ${
         show ? "blur-sm" : "none"
       }`}
     >
-      <div className="p-4">
-        <div id="Header-section" className="flex p-4 justify-between">
+      <div className="p-2 md:p-3">
+        <div id="Header-section" className="md:flex p-3 justify-between">
           <div className="flex">
             <img src={lightningIcon} alt="Home" className="h-7 w-7" />{" "}
             <h2 className="text-xl font-bold mb-4">Charging Station</h2>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center mb-2">
             <div className="bg-[#222324] rounded p-2 mx-2">
               <img src={reverseIcon} alt="Home" className="h-4" />
             </div>
@@ -103,25 +103,25 @@ export const Dashboard: React.FC<DashboardProps> = ({
             </div>
           </div>
         )}
-        <div className="flex items-stretch">
-          <div>
+        <div className="md:flex block items-stretch w-11/12 md:w-full">
+          <div className="md:w-3/5 overflow-x-auto">
             <h2 className="align-left flex p-4 text-lg">Graphs</h2>
-            <div className="border border-[#222324] bg-[#222324] rounded w-fit p-4">
+            <div className="border border-[#222324] bg-[#222324] rounded md:w-full p-4">
               <MyLineChart />
             </div>
           </div>
-          <div>
+          <div className="md:w-2/5">
             <div className="flex items-center justify-between">
               <h2 className="align-right flex p-4 text-lg">
                 Key Performance Indicators
               </h2>
-              <div className="flex items-center border border-[#5A5A5AA1] rounded p-1">
+              <div className="flex items-center border border-[#5A5A5AA1] rounded p-1 mr-4">
                 <div>Variables</div>
                 <img src={plusIcon} alt="plus icon" className="h-6 w-6" />
               </div>
             </div>
-            <div className="flex mx-2">
-              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-6 mx-2 text-left">
+            <div className="flex md:mx-2">
+              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 mx-1 md:mx-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Infrastructure units</div>
                   <img src={infoIcon} alt="info icon" className="h-3 w-3" />
@@ -133,7 +133,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                   €421.07{" "}
                 </div>
               </div>
-              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-6 mx-2 text-left">
+              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 mx-1 md:mx-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Changing growth</div>
                   <img src={infoIcon} alt="info icon" className="h-3 w-3" />
@@ -144,8 +144,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <div className="text-2xl font-bold text-right mt-4">33.07 </div>
               </div>
             </div>
-            <div className="flex mx-2">
-              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-6 my-3 mx-2 text-left">
+            <div className="flex md:mx-2">
+              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 my-3 mx-1 md:mx-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Localization change</div>
                   <img src={infoIcon} alt="info icon" className="h-3 w-3" />
@@ -155,7 +155,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 </div>
                 <div className="text-2xl font-bold text-right mt-4">21.9%</div>
               </div>
-              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-6 my-3 mx-2 text-left">
+              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 my-3 mx-1 md:mx-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Fleet growth</div>
                   <img src={infoIcon} alt="info icon" className="h-3 w-3" />

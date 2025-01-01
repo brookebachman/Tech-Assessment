@@ -23,7 +23,7 @@ const NavHeader = () => {
   return (
     <div className="bg-[#161618] p-4 flex justify-between items-center left-20 top-0 fixed h-20 w-full z-10">
       {/* Left Side: Menu Icon and Links */}
-      <div className="flex space-x-10">
+      <div className="hidden md:flex space-x-10">
         <Link
           to="/charging-stations"
           className="text-white hover:text-blue-200"

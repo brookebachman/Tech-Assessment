@@ -1,35 +1,43 @@
-import { auth, provider, signInWithPopup } from "../firebase";
+import React, { useEffect } from "react";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithRedirect,
+  getRedirectResult,
+} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
-
-  // Check if the user is already authenticated and redirect to dashboard
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        // If user is authenticated, navigate to dashboard
-        navigate("/dashboard");
-      }
-    });
-
-    return () => unsubscribe(); // Clean up the listener on unmount
-  }, [navigate]);
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
 
   const handleGoogleLogin = async () => {
     try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log("User details: ", user);
-
-      // Navigate to the dashboard after successful login
-      navigate("/dashboard");
-    } catch (error: any) {
-      // Catching error as `any` for proper handling
-      console.error("Error during Google login: ", error.message);
+      // Trigger the sign-in redirect
+      await signInWithRedirect(auth, provider);
+    } catch (error) {
+      console.error("Error during Google login:", error);
     }
   };
+
+  // Handle the redirect result after the page reloads
+  useEffect(() => {
+    const handleRedirectResult = async () => {
+      try {
+        const result = await getRedirectResult(auth);
+        if (result) {
+          const user = result.user;
+          console.log("User details:", user);
+          navigate("/dashboard"); // Navigate after successful login
+        }
+      } catch (error) {
+        console.error("Error handling redirect result:", error);
+      }
+    };
+
+    handleRedirectResult();
+  }, [auth, navigate]);
 
   return (
     <div className="login">

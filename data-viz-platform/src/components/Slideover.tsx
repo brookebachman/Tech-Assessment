@@ -19,10 +19,11 @@ export const SlideOver: React.FC<SlideOverProps> = ({
   const [showExtra, setShowExtra] = useState(false);
   return (
     <div
-      className={`bg-[#0E0D0D] border border-b-black h-full w-[691px] top-0 absolute p-4
+      className={`bg-[#0E0D0D] border border-b-black h-full md:w-[691px] top-0 absolute p-3 md:p-4
       z-40 transition-all`}
       style={{
-        right: show ? 0 : -700,
+        right: show ? "" : -730,
+        left: show ? 0 : "",
       }}
     >
       <div className="flex items-center justify-between mb-6">
@@ -34,28 +35,35 @@ export const SlideOver: React.FC<SlideOverProps> = ({
           onClick={() => setShowSlider(false)}
         />
       </div>
-      <div className="flex items-center">
-        <div className="border border-[#5A5A5A] bg-[#161618] rounded flex items-center p-1 w-3/4 mr-3">
+      <div className="md:flex items-center">
+        <div className="border border-[#5A5A5A] bg-[#161618] rounded flex items-center p-1 w-full md:w-3/4 mr-3 mb-4 md:mb-0">
           <img src={magnifyingGlassIcon} className="mr-2" /> Carbo
         </div>
-        <Button label="Autofill" icon={sparkleIcon} />
-        <Button label="Rerun" icon={greenReverseIcon} green />
+        <div className="flex items-center">
+          <Button label="Autofill" icon={sparkleIcon} className="w-full" />
+          <Button
+            label="Rerun"
+            icon={greenReverseIcon}
+            green
+            className="w-full"
+          />
+        </div>
       </div>
       <div className="bg-[#161618] rounded p-4 my-4 overflow-auto">
         <div>Variable category 1</div>
-        <div className="flex my-4 gap-4">
+        <div className="flex flex-wrap my-4 gap-4">
           <Chip label="Carbon 1" />
           <Chip label="Co2 Distribution" />
           <Chip label="Fleet sizing" />
         </div>
         <div>Variable category 1</div>
-        <div className="flex my-4 gap-4">
+        <div className="flex flex-wrap my-4 gap-4">
           <Chip label="Parking Rate" />
           <Chip label="Border Rate" />
           <Chip label="Request Rate" />
         </div>
         <div>Variable category 1</div>
-        <div className="flex my-4 gap-4">
+        <div className="flex flex-wrap my-4 gap-4">
           <Chip label="Carbon 1" />
           <Chip label="Carbon 1" />
         </div>
