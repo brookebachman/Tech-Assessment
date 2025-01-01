@@ -20,7 +20,7 @@ function App() {
         {/* Main Layout */}
         <div className="flex">
           {/* Left Sidebar */}
-          <aside className="fixed top-20 left-0 h-full w-full md:w-20 z-50">
+          <aside className="fixed z-50 top-20 left-0 h-full md:w-20">
             <Navbar />
           </aside>
 

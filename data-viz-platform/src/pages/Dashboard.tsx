@@ -103,10 +103,10 @@ export const Dashboard: React.FC<DashboardProps> = ({
             </div>
           </div>
         )}
-        <div className="md:flex block items-stretch w-11/12 md:w-full">
-          <div className="md:w-3/5 overflow-x-auto">
+        <div className="md:flex block items-stretch w-full">
+          <div className="md:w-7/12 overflow-x-auto">
             <h2 className="align-left flex p-4 text-lg">Graphs</h2>
-            <div className="border border-[#222324] bg-[#222324] rounded md:w-full p-4">
+            <div className="border border-[#222324] bg-[#222324] rounded md:w-11/12 p-4 md:ml-4">
               <MyLineChart />
             </div>
           </div>
@@ -120,8 +120,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <img src={plusIcon} alt="plus icon" className="h-6 w-6" />
               </div>
             </div>
-            <div className="flex md:mx-2">
-              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 mx-1 md:mx-2 text-left">
+            <div className="flex md:ml-2">
+              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 mx-1 md:ml-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Infrastructure units</div>
                   <img src={infoIcon} alt="info icon" className="h-3 w-3" />
@@ -133,7 +133,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                   €421.07{" "}
                 </div>
               </div>
-              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 mx-1 md:mx-2 text-left">
+              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 mx-1 md:ml-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Changing growth</div>
                   <img src={infoIcon} alt="info icon" className="h-3 w-3" />
@@ -144,8 +144,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <div className="text-2xl font-bold text-right mt-4">33.07 </div>
               </div>
             </div>
-            <div className="flex md:mx-2">
-              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 my-3 mx-1 md:mx-2 text-left">
+            <div className="flex md:ml-2">
+              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 my-3 mx-1 md:ml-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Localization change</div>
                   <img src={infoIcon} alt="info icon" className="h-3 w-3" />
@@ -155,7 +155,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 </div>
                 <div className="text-2xl font-bold text-right mt-4">21.9%</div>
               </div>
-              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 my-3 mx-1 md:mx-2 text-left">
+              <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 my-3 mx-1 md:ml-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Fleet growth</div>
                   <img src={infoIcon} alt="info icon" className="h-3 w-3" />
