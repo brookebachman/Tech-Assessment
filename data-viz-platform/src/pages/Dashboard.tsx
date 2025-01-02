@@ -116,7 +116,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               <h2 className="align-right flex p-4 text-lg">
                 Key Performance Indicators
               </h2>
-              <div className="flex items-center border border-[#5A5A5AA1] rounded p-1 mr-4">
+              <div className="flex items-center border border-[#5A5A5AA1] rounded p-1">
                 <div>Variables</div>
                 <img src={plusIcon} alt="plus icon" className="h-6 w-6" />
               </div>
