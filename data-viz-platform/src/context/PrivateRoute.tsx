@@ -1,15 +1,26 @@
-import { Navigate } from "react-router-dom";
-import { useAuth } from "./Context";
+// context/PrivateRoute.tsx
+import { Navigate, Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { auth } from "../firebase";
 
-interface PrivateRouteProps {
-  children: JSX.Element;
-}
+const PrivateRoute = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-const PrivateRoute = ({ children }: PrivateRouteProps) => {
-  const { isAuthenticated } = useAuth();
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setIsAuthenticated(!!user);
+      setIsLoading(false);
+    });
 
-  // If authenticated, render the children (the protected route content). If not, redirect to login page
-  return isAuthenticated ? children : <Navigate to="/login" />;
+    return () => unsubscribe();
+  }, []);
+
+  if (isLoading) {
+    return <div>Loading...</div>; // Or your loading component
+  }
+
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default PrivateRoute;

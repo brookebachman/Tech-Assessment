@@ -6,7 +6,11 @@ import NavHeader from "./components/NavHeader";
 import { Dashboard } from "./pages/Dashboard";
 import { SlideOver } from "./components/Slideover";
 import Login from "./pages/Login";
-import PrivateRoute from "./context/PrivateRoute";
+// import your firebase config
+
+// Use Firebase services here
+
+import PrivateRoute from "./context/PrivateRoute"; // Import your PrivateRoute component
 
 function App() {
   const [showSlider, setShowSlider] = useState(false);
@@ -27,19 +31,28 @@ function App() {
           {/* Main Content */}
           <main className="md:ml-24 ml-0 min-w-screen mt-20 p-1 md:p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-x-hidden">
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <Dashboard setShowSlider={setShowSlider} show={showSlider} />
-                }
-              />
-              {/* Use PrivateRoute as a wrapper */}
-              <Route
-                path="/dashboard"
-                element={
-                  <Dashboard setShowSlider={setShowSlider} show={showSlider} />
-                }
-              />
+              {/* PrivateRoute wraps Route */}
+              <Route element={<PrivateRoute />}>
+                <Route
+                  path="/"
+                  element={
+                    <Dashboard
+                      setShowSlider={setShowSlider}
+                      show={showSlider}
+                    />
+                  }
+                />
+                <Route
+                  path="/dashboard"
+                  element={
+                    <Dashboard
+                      setShowSlider={setShowSlider}
+                      show={showSlider}
+                    />
+                  }
+                />
+              </Route>
+
               <Route path="/login" element={<Login />} />
             </Routes>
 
