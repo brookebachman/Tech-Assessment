@@ -56,7 +56,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             </h3>
           </div>
           <div
-            className="border border-[#C8E972] rounded-full flex px-2 py-1 mr-5"
+            className="border border-[#C8E972] rounded-full flex px-2 py-1 mr-5 cursor-pointer"
             onClick={() => setExpand(!expand)}
           >
             {!expand ? (
@@ -66,7 +66,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 className="h-4 w-4 rotate-180"
               />
             ) : (
-              <img src={chevronDownIcon} alt="Home" className="h-4 w-4 " />
+              <img src={chevronDownIcon} alt="Home" className="h-4 w-4" />
             )}
           </div>
         </div>
@@ -137,25 +137,43 @@ export const Dashboard: React.FC<DashboardProps> = ({
                   This describes variable two and what the shown data means.
                 </div>
                 <div className="text-2xl font-bold text-right mt-4">
-                  €421.07{" "}
+                  €421.07
                 </div>
               </div>
               <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 mx-1 md:ml-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Changing growth</div>
-                  <img src={infoIcon} alt="info icon" className="h-3 w-3" />
+                  <Tooltip
+                    text="Changing growth over time blah blah."
+                    position="bottom"
+                  >
+                    <img
+                      src={infoIcon}
+                      alt="info icon"
+                      className="h-3 w-3 cursor-help"
+                    />
+                  </Tooltip>
                 </div>
                 <div className="text-[#BBBBBB] text-xs">
                   This describes variable two and what the shown data means.
                 </div>
-                <div className="text-2xl font-bold text-right mt-4">33.07 </div>
+                <div className="text-2xl font-bold text-right mt-4">33.07</div>
               </div>
             </div>
             <div className="flex md:ml-2">
               <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 my-3 mx-1 md:ml-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Localization change</div>
-                  <img src={infoIcon} alt="info icon" className="h-3 w-3" />
+                  <Tooltip
+                    text="Localization change represents the geographical distribution changes."
+                    position="bottom"
+                  >
+                    <img
+                      src={infoIcon}
+                      alt="info icon"
+                      className="h-3 w-3 cursor-help"
+                    />
+                  </Tooltip>
                 </div>
                 <div className="text-[#BBBBBB] text-xs">
                   This describes variable two and what the shown data means.
@@ -165,7 +183,16 @@ export const Dashboard: React.FC<DashboardProps> = ({
               <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 my-3 mx-1 md:ml-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Fleet growth</div>
-                  <img src={infoIcon} alt="info icon" className="h-3 w-3" />
+                  <Tooltip
+                    text="Fleet growth shows the percentage increase in vehicle fleet size."
+                    position="bottom"
+                  >
+                    <img
+                      src={infoIcon}
+                      alt="info icon"
+                      className="h-3 w-3 cursor-help"
+                    />
+                  </Tooltip>
                 </div>
                 <div className="text-[#BBBBBB] text-xs">
                   This describes variable two and what the shown data means.

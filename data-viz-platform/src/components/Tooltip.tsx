@@ -4,12 +4,14 @@ interface TooltipProps {
   text: string;
   children: React.ReactNode;
   position?: "top" | "right" | "bottom" | "left";
+  maxWidth?: string; // Optional prop for custom width
 }
 
 const Tooltip: React.FC<TooltipProps> = ({
   text,
   children,
   position = "top",
+  maxWidth = "200px", // Default max width
 }) => {
   const [show, setShow] = useState(false);
 
@@ -33,9 +35,10 @@ const Tooltip: React.FC<TooltipProps> = ({
           className={`
             absolute z-50 px-2 py-1 text-sm
             bg-[#222324] text-white rounded-md
-            whitespace-nowrap pointer-events-none
+            pointer-events-none
             ${positionClasses[position]}
           `}
+          style={{ maxWidth, whiteSpace: "normal" }}
         >
           {text}
           <div

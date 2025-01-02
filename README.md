@@ -1,22 +1,37 @@
-# Data Visualization Platform
+# Tech Challenge
 
-A platform for creating and visualizing data in an interactive way.
+A modern web application for [brief description of what your app does]. Built with React, Vite, and Firebase.
+
+## Features
+
+- 📊 Interactive dashboard with data visualization
+- 🔐 Secure Google Authentication
+- 📱 Fully responsive design
+- 📈 Dynamic charts and KPI displays
+- 🎨 Modern dark theme interface
+
+## Tech Stack
+
+- **Framework:** React with TypeScript
+- **Build Tool:** Vite
+- **Authentication:** Firebase Auth
+- **Styling:** Tailwind CSS
+- **Charts:** ReCharts
+- **Deployment:** Firebase
 
 ## Getting Started
 
-Follow these instructions to set up and run the project locally.
-
 ### Prerequisites
 
-Make sure you have the following installed on your machine:
-
-- [Node.js](https://nodejs.org/) (v16 or later)
-- [npm](https://www.npmjs.com/)
+- Node.js (v14 or higher)
+- npm or yarn
+- Firebase account
 
 ### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/data-viz-platform.git
-   cd data-viz-platform
-   ```
+
+```bash
+git clone [your-repository-url]
+cd [project-directory]
+```
