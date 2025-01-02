@@ -19,11 +19,10 @@ export const SlideOver: React.FC<SlideOverProps> = ({
   const [showExtra, setShowExtra] = useState(false);
   return (
     <div
-      className={`bg-[#0E0D0D] border border-b-black h-full md:w-[691px] top-0 absolute p-3 md:p-4
-      z-40 transition-all`}
+      className={`bg-[#0E0D0D] border border-b-black h-full w-full md:w-[691px] top-0 absolute p-3 md:p-4
+        z-40 transition-all`}
       style={{
-        right: show ? "" : -730,
-        left: show ? 0 : "",
+        right: show ? 0 : "100%",
       }}
     >
       <div className="flex items-center justify-between mb-6">
