@@ -1,37 +1,50 @@
-# Tech Challenge
+# Data Visualization Platform
 
-A modern web application for [brief description of what your app does]. Built with React, Vite, and Firebase.
+An interactive dashboard for visualizing charging station data with real-time updates and dynamic KPI tracking. Built with React, TypeScript, and Firebase.
 
-## Features
+## 🚀 Features
 
-- 📊 Interactive dashboard with data visualization
-- 🔐 Secure Google Authentication
-- 📱 Fully responsive design
-- 📈 Dynamic charts and KPI displays
-- 🎨 Modern dark theme interface
+- **Interactive Dashboard**
 
-## Tech Stack
+  - Real-time data visualization with dynamic charts
+  - Key Performance Indicators (KPI) tracking
+  - Expandable/collapsible sections for detailed information
+  - Responsive design for mobile and desktop
 
-- **Framework:** React with TypeScript
+- **Firebase Integration**
+
+  - Google Authentication
+  - Real-time database updates
+  - Secure hosting and deployment
+
+- **User Interface**
+  - Dark mode interface
+  - Tooltips for enhanced user guidance
+  - Slide-over panel for variable editing
+  - Mobile-responsive navigation
+
+## 🛠️ Technical Stack
+
+- **Frontend:** React 18 with TypeScript
 - **Build Tool:** Vite
-- **Authentication:** Firebase Auth
 - **Styling:** Tailwind CSS
-- **Charts:** ReCharts
-- **Deployment:** Firebase
+- **Authentication:** Firebase Auth
+- **Charts:** [Your charting library]
+- **State Management:** React Context
+- **Deployment:** Firebase Hosting
 
-## Getting Started
-
-### Prerequisites
+## 📋 Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
 - Firebase account
+- Git
 
-### Installation
+## ⚙️ Installation & Setup
 
 1. Clone the repository:
 
 ```bash
 git clone [your-repository-url]
-cd [project-directory]
+cd [project-name]
 ```
