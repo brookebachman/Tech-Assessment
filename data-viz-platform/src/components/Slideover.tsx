@@ -19,8 +19,8 @@ export const SlideOver: React.FC<SlideOverProps> = ({
   const [showExtra, setShowExtra] = useState(false);
   return (
     <div
-      className={`bg-[#0E0D0D] border border-b-black h-full w-full md:w-[691px] top-0 absolute p-3 md:p-4
-        z-40 transition-all`}
+      className={`bg-[#0E0D0D] border border-b-black min-h-screen h-full w-full md:w-[691px] top-0 absolute p-3 md:p-4
+        z-50 transition-all overflow-y-auto`}
       style={{
         right: show ? 0 : "100%",
       }}

@@ -17,21 +17,23 @@ function App() {
 
   return (
     <Router>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen overflow-auto">
         {/* Top Header */}
         <NavHeader />
 
         {/* Main Layout */}
-        <div className="flex">
+        <div className="flex flex-1 relative">
           {/* Left Sidebar */}
           <aside className="fixed z-50 top-20 left-0 h-full md:w-20">
             <Navbar />
           </aside>
 
           {/* Main Content */}
-          <main className="md:ml-24 ml-0 min-w-screen mt-20 p-1 md:p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded overflow-x-hidden">
+          <main
+            className="flex-1 md:ml-24 ml-0 mt-20 p-1 md:p-4 border-t-2 border-t-[#525252] border-l-2 border-l-[#525252] rounded 
+            overflow-y-auto md:overflow-y-auto overflow-x-hidden"
+          >
             <Routes>
-              {/* PrivateRoute wraps Route */}
               <Route element={<PrivateRoute />}>
                 <Route
                   path="/"

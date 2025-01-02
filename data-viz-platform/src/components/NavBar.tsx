@@ -20,6 +20,7 @@ const Navbar = () => {
       <div className="max-w-7xl">
         {/* Menu Icon */}
         <button
+          id="hamburger-menu"
           onClick={toggleMenu}
           className="text-white focus:outline-none border border-[#222324]"
         >
