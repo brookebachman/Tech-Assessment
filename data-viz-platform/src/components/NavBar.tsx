@@ -36,7 +36,16 @@ const Navbar = () => {
             >
               <img src={homeIcon} alt="Home" className="h-6 w-6" />
             </Link>
-            <Link
+
+            <img src={bellIcon} alt="Notifications" className="h-6 w-6" />
+
+            <img src={clipboardIcon} alt="Clipboard" className="h-6 w-6" />
+
+            <img src={cloudIcon} alt="Cloud Upload" className="h-6 w-6" />
+
+            <img src={cogIcon} alt="Settings" className="h-6 w-6" />
+
+            {/* If I was implementing these routes<Link
               to="/notifications"
               className="text-white hover:text-blue-200"
             >
@@ -50,7 +59,7 @@ const Navbar = () => {
             </Link>
             <Link to="/settings" className="text-white hover:text-blue-200">
               <img src={cogIcon} alt="Settings" className="h-6 w-6" />
-            </Link>
+            </Link> */}
           </div>
 
           {/* Profile at the bottom */}
@@ -65,7 +74,7 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute bg-[#222324] text-white p-4 w-40 rounded left-0 z-[200]">
             <Link
-              to="/"
+              to="/dashboard"
               className="block py-2 hover:bg-blue-500"
               onClick={toggleMenu}
             >

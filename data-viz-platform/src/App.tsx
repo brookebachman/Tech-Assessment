@@ -22,7 +22,7 @@ function App() {
         <NavHeader />
 
         {/* Main Layout */}
-        <div className="flex flex-1 relative">
+        <div className="flex flex-1 relative overflow-x-hidden">
           {/* Left Sidebar */}
           <aside className="fixed z-50 top-20 left-0 h-full md:w-20">
             <Navbar />

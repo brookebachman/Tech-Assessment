@@ -5,10 +5,6 @@ const NavHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
@@ -22,19 +18,18 @@ const NavHeader = () => {
   return (
     <div className="bg-[#161618] p-4 flex justify-between items-center left-20 top-0 fixed h-20 w-full z-10">
       {/* Left Side: Menu Icon and Links */}
-      <div className="hidden md:flex space-x-10">
-        <Link
-          to="/charging-stations"
-          className="text-white hover:text-blue-200"
-        >
+      <div className="hidden md:flex items-center space-x-10">
+        <Link to="/dashboard" className="text-white hover:text-blue-200">
           Charging Stations
         </Link>
-        <Link to="/foot-sizing" className="text-white hover:text-blue-200">
+        <h1>Foot Sizing</h1>
+        <h1>Parking</h1>
+        {/* <Link to="/foot-sizing" className="text-white hover:text-blue-200">
           Foot Sizing
         </Link>
         <Link to="/parking" className="text-white hover:text-blue-200">
           Parking
-        </Link>
+        </Link> */}
       </div>
 
       {/* Right Side: Search Bar */}
