@@ -8,6 +8,7 @@ import infoIcon from "../assets/info.png";
 import downloadIcon from "../assets/download.png";
 import chevronDownIcon from "../assets/chevron-down.png";
 import { useState } from "react";
+import Tooltip from "../components/Tooltip";
 
 type DashboardProps = {
   setShowSlider: (value: boolean) => void;
@@ -124,7 +125,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
               <div className="border border-[#222324] bg-[#222324] rounded w-3/6 p-3 md:p-6 mx-1 md:ml-2 text-left">
                 <div className="flex items-center justify-between mb-2">
                   <div>Infrastructure units</div>
-                  <img src={infoIcon} alt="info icon" className="h-3 w-3" />
+                  <Tooltip text="Infrastructure units represent the total number of charging stations installed.">
+                    <img
+                      src={infoIcon}
+                      alt="info icon"
+                      className="h-3 w-3 cursor-help"
+                    />
+                  </Tooltip>
                 </div>
                 <div className="text-[#BBBBBB] text-xs">
                   This describes variable two and what the shown data means.
